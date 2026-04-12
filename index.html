@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NJ Valdez Colleges Foundation Inc.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+
+
+
+        <div class="logo-container">
+            <img src="logoo.jpg" alt="" class="logo-img">
+            <div class="logo-text">NJVCF<span>INC</span></div>
+        </div>
+
+
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#campus-news">Campus News</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#login" class="login-btn">Log In</a></li>
+
+        </ul>
+        <button id="themeToggle" class="theme-toggle-btn" type="button">Dark Mode</button>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-left">
+                <h1><span class="welcome-text">Welcome</span> NJ VALDEZ COLLEGES FOUNDATION INC. PORTAL<span class="formerly-text">(Formerly: Urdaneta College of Technology)</span></h1>
+                <p>Empowering ethical, competent, and socially responsible leaders.</p>
+                
+                <div class="hero-quotes">
+                    <div class="quote active">
+                        <blockquote>"Education is the most powerful weapon which you can use to change the world."</blockquote>
+                        <cite>— Nelson Mandela</cite>
+                    </div>
+                    <div class="quote">
+                        <blockquote>"The function of education is to teach one to think intensively and to think critically. Intelligence plus character - that is the goal of true education."</blockquote>
+                        <cite>— Martin Luther King Jr.</cite>
+                    </div>
+                    <div class="quote">
+                        <blockquote>"An investment in knowledge pays the best interest."</blockquote>
+                        <cite>— Benjamin Franklin</cite>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#about" class="cta-btn">Discover More</a>
+                    <a href="#events" class="cta-btn cta-btn-secondary">Upcoming Events</a>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="800">800+</div>
+                        <div class="stat-label">Students Enrolled</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="15">15+</div>
+                        <div class="stat-label">Programs Offered</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="95">95%</div>
+                        <div class="stat-label">Graduate Employment</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span class="scroll-text">Scroll</span>
+            <div class="scroll-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+        </div>
+        </section>
+
+    <section id="campus-news" class="section bulletin-section reveal">
+        <div style="text-align: center;">
+            <h2 class="section-title">📢 Campus News & Announcements</h2>
+            <p class="about-subtitle">Stay updated with urgent notices, academic updates, and campus news.</p>
+        </div>
+        
+        <!-- FILTERS - Events → Social -->
+        <div class="bulletin-filters">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="academic">Academic</button>
+            <button class="filter-btn" data-category="social">Social</button>
+            <button class="filter-btn" data-category="urgent">Urgent</button>
+        </div>
+        
+        <!-- GRID -->
+        <div class="bulletin-grid" id="bulletinGrid"></div>
+    </section>
+
+    <section id="about" class="section reveal">
+        <div class="about-intro">
+            <h2 class="section-title">Who We Are</h2>
+            <p class="about-subtitle">About NJ Valdez Colleges Foundation Inc</p>
+            <p>NJ Valdez Colleges Foundation Inc has been a cornerstone of quality education, nurturing generations of dedicated professionals, servant leaders, and lifelong learners committed to nation-building and community service.</p>
+        </div>
+        <div class="about-container">
+            <div class="about-card">
+                <div class="icon">🎯</div>
+                <h3>Our Mission</h3>
+                <p>NJ Valdez Colleges Foundation mission is to achieve and maintain economic development and social progress resulting to the growth of students, professionals and individuals as its preserves and motes desirable cultural moral , and spiritual valves in globally competitive world.  </p>
+            </div>
+            <div class="about-card">
+                <div class="icon">👁️</div>
+                <h3>Our Vision</h3>
+                <p>NJ Valdez Colleges Foundation is envisioned to acquire vital educational foundation for nurturing and enhancing the quality of life of every individual as their full potentials are realized to greatest extend. It shall in calculate promotion of developing professionals who are strengthened by knowledge, excellence and values education.   </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="section reveal">
+        <h2 class="section-title">Upcoming Events</h2>
+        <div class="events-grid">
+            <div class="event-card">
+                <div class="date">MARCH 27</div>
+                <h4>Women's Month</h4>
+                <p>Celebrating years of womanhood.</p>
+            </div>
+            <div class="event-card">
+                <div class="date">APR 15</div>
+                <h4>Foundation Day</h4>
+                <p>Celebrating years of academic excellence and service.</p>
+            </div>
+            <div class="event-card">
+                <div class="date">JUNE 20</div>
+                <h4>Graduation Ceremony</h4>
+                <p>The beautiful thing about learning is that no one can take it away from you.</p>
+            </div>
+            
+            <div class="event-card">
+                <div class="date">MAY 10</div>
+                <h4>Sports Fest 2026</h4>
+                <p>A week of camaraderie and athletic competition.</p>
+            </div>
+            <div class="event-card">
+                <div class="date">NOV 28</div>
+                <h4>Acquaintance Party</h4>
+                <p>There are no strangers here; only friends you haven't yet met.</p>
+            </div>
+<div class="event-card">
+                <div class="date">DEC 21</div>
+                <h4>Christmas Party</h4>
+                <p>Christmas is not just a season, it's a feeling of community. At NJVCF, we don't just share a campus; we share a home.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="gallery" class="section reveal">
+        <h2 class="section-title">Campus Gallery</h2>
+            <div class="gallery-grid" id="albumGrid">
+                <div class="album-card" data-album="1" style="background-image: url('women1.jpg')">
+                    <div class="album-overlay">
+                        <h3>Women's Month</h3>
+                        <p>5 photos</p>
+                    </div>
+                </div>
+                <div class="album-card" data-album="2" style="background-image: url('intrams2.jpg')">
+                    <div class="album-overlay">
+                        <h3>Intramurals & Sports Fest</h3>
+                        <p>5 photos</p>
+                    </div>
+                </div>
+                <div class="album-card" data-album="3" style="background-image: url('grad1.jpg')">
+                    <div class="album-overlay">
+                        <h3>Graduation Day</h3>
+                        <p>6 photos</p>
+                    </div>
+                </div>
+                <div class="album-card" data-album="4" style="background-image: url('acq5.jpg')">
+                    <div class="album-overlay">
+                        <h3>Acquaintance Party</h3>
+                        <p>5 photos</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Photo Album Lightbox Modal -->
+    <div id="albumModal" class="album-modal">
+        <div class="album-modal-content">
+            <button class="album-modal-close">&times;</button>
+            <button class="album-nav-btn album-prev">&#10094;</button>
+            <div class="album-photos-container">
+                <img id="albumPhoto" src="" alt="Album photo" class="album-photo">
+            </div>
+            <button class="album-nav-btn album-next">&#10095;</button>
+            <div class="album-thumbnails" id="albumThumbnails"></div>
+            <div class="album-counter"><span id="photoCount">1</span> / <span id="totalCount">4</span></div>
+        </div>
+    </div>
+
+    <section id="login" class="section login-section reveal">
+
+        <div class="login-container">
+            <div class="dashboard-preview">
+                <h3>Student Portal</h3>
+                <p>Access Your Dashboard</p>
+                <p>Log in to access your courses, grades, timetable, library resources, and all student services in one place.</p>
+                <ul>
+                    <li>📚 Access course materials &amp; assignments</li>
+                    <li>📅 View your timetable &amp; exam schedule</li>
+                    <li>📊 Track your academic progress</li>
+                </ul>
+            </div>
+            <div class="login-form-card">
+
+
+<h2 class="login-title">Secure Login</h2>
+                
+                <form id="loginForm" class="login-form">
+
+                    <div class="input-group">
+                        <label for="username">Username or Email</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="remember"> Remember me
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="login-btn-form">Log In</button>
+                    <p class="login-hint">Note: use student@example.com / password123 to access the dashboard.</p>
+                    <div class="login-links">
+                        <a href="#" id="forgotPassword">Forgot Password?</a>
+                        <span>|</span>
+                        <a href="#" class="register-link">Create Account</a>
+                    </div>
+                </form>
+                
+                <div id="loginSuccess" class="success-message" style="display: none;">
+                    <p>Login successful! Welcome back.</p>
+                    <button id="dashboardBtn" class="dashboard-btn">Go to Dashboard</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dashboard" class="dashboard-section" style="display: none;">
+        <div class="dashboard-grid">
+            <aside class="dashboard-sidebar" id="dashboardSidebar">
+                <div class="dashboard-profile">
+                    <img src="student.jpg" alt="Student photo" class="profile-photo">
+                    <div class="profile-meta">
+                        <h3 id="profileName">LARA JEAN</h3>
+                        <p id="profileCourse">BS Information Technology</p>
+                        <p id="profileId">Student ID: 20260001</p>
+                    </div>
+                </div>
+                <nav class="dashboard-nav">
+                    <button class="dashboard-nav-link active" data-panel="overview">Overview</button>
+                    <button class="dashboard-nav-link" data-panel="grades">Grades</button>
+                    <button class="dashboard-nav-link" data-panel="schedule">Schedule</button>
+                    <button class="dashboard-nav-link" data-panel="financials">Financials</button>
+                </nav>
+                <button id="logoutBtn" class="logout-btn">Log Out</button>
+            </aside>
+            <main class="dashboard-content">
+                <div class="dashboard-mobile-header">
+                    <button id="dashboardMenuBtn" class="dashboard-menu-btn">Menu</button>
+                    <div class="dashboard-mobile-title">Student Dashboard</div>
+                </div>
+
+                <div class="dashboard-panel active" id="overviewPanel">
+                    <div class="dashboard-hero">
+                        <div>
+                            <span class="dashboard-welcome-text">Welcome back,</span>
+                            <h2 id="welcomeName">Jane Doe</h2>
+                        </div>
+                        <p>Here's a secure overview of your academic progress and campus activity.</p>
+                    </div>
+                    <div class="dashboard-quickcards">
+                        <div class="quick-card">
+                            <span>Units Enrolled</span>
+                            <strong id="unitsEnrolled">23</strong>
+                        </div>
+                        <div class="quick-card">
+                            <span>Overall GPA</span>
+                            <strong id="overallGPA">89</strong>
+                        </div>
+                        <div class="quick-card">
+                            <span>Pending Tasks</span>
+                            <strong id="pendingTasks">1</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-panel" id="gradesPanel">
+                    <h3>Grades</h3>
+                    <div class="grades-table-wrap">
+                        <table class="grades-table">
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Prelim</th>
+                                    <th>Midterm</th>
+                                    <th>Final</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>IT Fundamentals</td>
+                                    <td>88</td>
+                                    <td>91</td>
+                                    <td>93</td>
+                                </tr>
+                                <tr>
+                                    <td>Accounting</td>
+                                    <td>84</td>
+                                    <td>86</td>
+                                    <td>89</td>
+                                </tr>
+                                <tr>
+                                    <td>Web Development</td>
+                                    <td>92</td>
+                                    <td>94</td>
+                                    <td>96</td>
+                                </tr>
+                                <tr>
+                                    <td>Statistics</td>
+                                    <td>85</td>
+                                    <td>88</td>
+                                    <td>90</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="dashboard-panel" id="schedulePanel">
+                    <h3>Weekly Schedule</h3>
+                    <div class="schedule-grid">
+                        <div class="schedule-day">
+                            <strong>Mon</strong>
+                            <p>IT Lecture<br>8:00 - 10:00</p>
+                        </div>
+                        <div class="schedule-day">
+                            <strong>Tue</strong>
+                            <p>Accounting Lab<br>9:00 - 11:00</p>
+                        </div>
+                        <div class="schedule-day">
+                            <strong>Wed</strong>
+                            <p>Web Dev Workshop<br>10:00 - 12:00</p>
+                        </div>
+                        <div class="schedule-day">
+                            <strong>Thu</strong>
+                            <p>Statistics<br>8:00 - 10:00</p>
+                        </div>
+                        <div class="schedule-day">
+                            <strong>Fri</strong>
+                            <p>Advising<br>1:00 - 2:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-panel" id="financialsPanel">
+                    <h3>Financial Overview</h3>
+                    <div class="financial-grid">
+                        <div class="financial-card balance-card">
+                            <h4>Balance Due</h4>
+                            <strong>₱8,500.00</strong>
+                            <span class="status-badge pending">Pending</span>
+                        </div>
+                        <div class="financial-card history-card">
+                            <h4>Payment History</h4>
+                            <ul class="payment-history">
+                                <li><span>Sept 5</span><strong>₱2,000</strong><span class="status-badge paid">Paid</span></li>
+                                <li><span>Aug 2</span><strong>₱1,000</strong><span class="status-badge paid">Paid</span></li>
+                                <li><span>Jul 15</span><strong>₱1,500</strong><span class="status-badge due">Due</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="footer-grid">
+            <div class="footer-info">
+                <h4>NJ VALDEZ COLLEGES FOUNDATION INC.</h4>
+                <p>📍 Bacag, Villasis, Pangasinan, Philippines</p>
+                <p>📞 (075) 123-4567</p>
+                <p>✉️ info@njvcf.edu.ph</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NJ Valdez Colleges Foundation Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
