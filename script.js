@@ -8,6 +8,41 @@ hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
 });
 
+// Hide on scroll navbar functionality + Parallax effect
+let lastScrollTop = 0;
+let ticking = false;
+
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Hide/show navbar based on scroll direction
+            if (currentScroll > 100) {
+                if (currentScroll > lastScrollTop) {
+                    // Scrolling DOWN - hide navbar
+                    navbarElement.classList.add('hide');
+                    navbarElement.classList.remove('show');
+                } else {
+                    // Scrolling UP - show navbar
+                    navbarElement.classList.remove('hide');
+                    navbarElement.classList.add('show');
+                }
+            } else {
+                // Near top of page - always show
+                navbarElement.classList.remove('hide');
+                navbarElement.classList.add('show');
+            }
+            
+
+            
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+            ticking = false;
+        });
+        ticking = true;
+    }
+});
+
 function setTheme(theme) {
     const isDark = theme === 'dark';
     document.body.classList.toggle('dark-mode', isDark);
@@ -24,7 +59,10 @@ themeToggle.addEventListener('click', () => {
 const scrollIndicator = document.querySelector('.scroll-indicator');
 if (scrollIndicator) {
     scrollIndicator.addEventListener('click', () => {
-        document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+        const aboutSection = document.querySelector('#about');
+        if (aboutSection) {
+            aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     });
 }
 
@@ -267,26 +305,49 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeAlbum();
 });
 
-// Smooth scrolling for nav links - fixed navbar offset
-document.querySelectorAll('a[href^=\"#"]').forEach(anchor => {
+// Smooth scrolling for nav links with navbar offset and accessibility
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        
+        // Skip if href is just '#'
+        if (href === '#') return;
+        
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(href);
+        
         if (target) {
-            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 80;
             const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 20;
+            
             window.scrollTo({
                 top: targetPosition,
-                behavior: 'smooth'
+                behavior: 'smooth',
+                block: 'start'
             });
+            
+            // Set focus for accessibility
+            target.focus({ preventScroll: true });
+            
+            // Announce to screen readers
+            if (target.id) {
+                const srAnnounce = document.createElement('div');
+                srAnnounce.className = 'sr-only';
+                srAnnounce.textContent = `Navigated to ${target.id}`;
+                document.body.appendChild(srAnnounce);
+                setTimeout(() => srAnnounce.remove(), 1000);
+            }
         }
+        
         // Close mobile menu if open
-        navLinks.classList.remove('active');
-        hamburger.classList.remove('active');
+        if (navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
     });
 });
 
-// Reveal animations
+// Reveal animations with Intersection Observer
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -296,11 +357,14 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('animate');
+            // Stop observing after animation to improve performance
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-document.querySelectorAll('.reveal').forEach(el => {
+// Observe all reveal elements (including animation variants)
+document.querySelectorAll('.reveal, .reveal-from-left, .reveal-from-right, .reveal-scale').forEach(el => {
     observer.observe(el);
 });
 

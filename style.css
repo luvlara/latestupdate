@@ -1,5 +1,9 @@
  /* COMPLETE NJVCF WEBSITE STYLES - DARK GREEN/YELLOW THEME + PROFESSIONAL FONTS + HERO QUOTES */
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -35,6 +39,28 @@ body {
 body.dark-mode {
   background: #0f172a;
   color: #e2e8f0;
+}
+
+/* Dark mode text colors for titles */
+body.dark-mode .section-title {
+  color: #f0f9ff;
+}
+
+body.dark-mode .about-subtitle {
+  color: #fbbf24;
+}
+
+/* Screen reader only content for accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 /* Navbar always white - overrides dark mode */
@@ -128,6 +154,15 @@ body.dark-mode .login-links {
 .navbar.scrolled {
   padding: 0.5rem 2rem;
   background: rgba(255, 255, 255, 0.98);
+}
+
+.navbar.hide {
+  transform: translateY(-100%);
+  box-shadow: none;
+}
+
+.navbar.show {
+  transform: translateY(0);
 }
 
 .nav-links {
@@ -846,6 +881,11 @@ body.dark-mode .nav-links li a {
   left: 50%;
   transform: translateX(-50%);
 }
+
+.parallax-header .section-title::after {
+  display: none;
+}
+
 
 /* ABOUT */
 .about-container {
@@ -1579,6 +1619,58 @@ body.dark-mode .login-hint {
   transform: translateY(0);
 }
 
+/* Staggered animations for child elements */
+.reveal > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.animate > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal.animate > :nth-child(1) { transition-delay: 0.1s; }
+.reveal.animate > :nth-child(2) { transition-delay: 0.2s; }
+.reveal.animate > :nth-child(3) { transition-delay: 0.3s; }
+.reveal.animate > :nth-child(4) { transition-delay: 0.4s; }
+.reveal.animate > :nth-child(5) { transition-delay: 0.5s; }
+
+/* Alternative animation variants */
+.reveal-from-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-from-left.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-from-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-from-right.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-scale.animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .navbar {
@@ -1816,6 +1908,59 @@ body.dark-mode .login-hint {
   z-index: -1;
 }
 
+/* PARALLAX HEADER EFFECT */
+.parallax-header {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  overflow: hidden;
+  border-radius: 30px;
+  padding: 3rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+}
+
+.parallax-header::before {
+  display: none;
+}
+
+.parallax-content {
+  border-radius: 25px;
+  padding: 2rem;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+}
+
+.parallax-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, transparent 0%, rgba(248, 249, 250, 0.3) 100%);
+  pointer-events: none;
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(60px);
+  animation: revealFromBottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+}
+
+@keyframes revealFromBottom {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .bulletin-filters {
   display: flex;
   gap: 1rem;
@@ -2043,6 +2188,10 @@ body.dark-mode .bulletin-card {
 
 body.dark-mode .bulletin-card h3 {
   color: #f1f5f9;
+}
+
+body.dark-mode .bulletin-section {
+  background: #0f172a;
 }
 
 body.dark-mode .bulletin-modal-content {
