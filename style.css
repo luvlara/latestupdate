@@ -10,6 +10,23 @@ html {
   box-sizing: border-box;
 }
 
+/* GitHub Pages & Image Optimization Fixes */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.footer-grid img {
+  max-height: 80px;
+  width: auto;
+}
+
+.album-card {
+  background-size: cover !important;
+  background-position: center !important;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   line-height: 1.7;
