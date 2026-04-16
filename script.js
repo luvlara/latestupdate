@@ -483,11 +483,11 @@ function logout() {
 // BULLETIN BOARD FUNCTIONALITY - Add before window.load
 // Announcement data array - Easy to add new announcements here
 const announcements = [
-    {id:1, title:"🚨 CLASS SUSPENSION - Typhoon Signal #2", category:"urgent", date:"2026-12-05", details:"All classes suspended today due to Typhoon Signal #2. Remain safe. Normal operations resume tomorrow.", contact:"Registrar Office (075) 123-4567", isNew:true},
+    {id:1, title:"🚨 CLASS SUSPENSION - TYPHOON SIGNAL #2", category:"urgent", date:"2026-12-05", details:"All classes suspended today due to Typhoon Signal #2. Remain safe. Normal operations resume tomorrow.", contact:"Registrar Office (075) 123-4567", isNew:true},
     {id:2, title:"📚 ONLINE CLASS SCHEDULE", category:"academic", date:"2026-12-04", details:"Mon - Wed will be face to face and Thu - Sat will be Online", contact:"Ms. Reyes - Registrar", isNew:true},
-    {id:3, title:"🎄 Campus Party Dec 21, 5PM Gym", category:"social", date:"2026-12-06", details:"Festive attire. Games, food, performances. Santa hats welcome!", contact:"Student Council", isNew:true},
-    {id:4, title:"🏆 Sports Fest Registration Due Dec 10", category:"social", date:"2026-12-07", details:"Basketball, volleyball, badminton. Team registration open now!", contact:"PE Department", isNew:false},
-    {id:5, title:"💻 Semi Final Exam Schedule Posted Online", category:"academic", date:"2026-12-08", details:"APRIL 18, 20, 21", contact:"Academic Dean", isNew:false}
+    {id:3, title:"🎄 CAMPUS CHRISTMAS PARTY 21, 5PM GYM", category:"social", date:"2026-12-06", details:"Festive attire. Games, food, performances. Santa hats welcome!", contact:"Student Council", isNew:true},
+    {id:4, title:"🏆 SPORTS FEST REGISTRATION DUE DEC 10", category:"social", date:"2026-12-07", details:"Basketball, volleyball, badminton. Team registration open now!", contact:"PE Department", isNew:false},
+    {id:5, title:"💻 SEMI FINAL EXAM SCHEDULE POSTED ONLINE", category:"academic", date:"2026-12-08", details:"APRIL 18, 20, 21", contact:"Academic Dean", isNew:false}
 ];
 
 function renderBulletinGrid(annList = announcements) {
